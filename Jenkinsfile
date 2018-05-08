@@ -1,15 +1,21 @@
 pipeline    {
     stages    {
         stage("Prepare"){
-           echo "Hello World"
+           steps {
+               echo "Hello World"
+           }
         }
 
         stage("Check version"){
-            sh "docker --version"
+            steps   {
+                sh "docker --version"
+            }
         }
 
         stage("nuild image"){
-            sh "docker build -t hello-nginx ."
+            steps   {
+                sh "docker build -t hello-nginx ."
+            }
         }
     }
 
