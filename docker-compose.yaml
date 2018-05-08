@@ -23,4 +23,5 @@ services:
     image:  jenkinsci/blueocean
     ports:
       - 8081:8080
+    volumn: /var/run/docker.sock:/var/run/docker.sock
     
