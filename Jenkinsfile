@@ -25,8 +25,11 @@ pipeline    {
 
         stage("push image"){
             steps   {
-                sh "docker login -u somphol123p -p passw0rd"
-                sh "docker push ${env.imageName}"
+                docker.withRegistry('https://registry.hub.docker.com', 'somphol123p')
+                {
+                    def image = docker.build{"${env.imageName}:1.${env.BUILD_NUMBER}"}
+                    image.push{}
+                }
             } 
         }
     }
