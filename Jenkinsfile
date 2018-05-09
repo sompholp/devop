@@ -25,9 +25,9 @@ pipeline    {
 
         stage("push image"){
             steps   {
-                docker.withRegistry('https://registry.hub.docker.com', 'somphol123p')
+                docker.withRegistry('https://registry.hub.docker.com','somphol123p')
                 {
-                    def image = docker.build{"${env.imageName}:1.${env.BUILD_NUMBER}"}
+                    def image = docker.build("${env.imageName}:1.${env.BUILD_NUMBER}")
                     image.push{}
                 }
             } 
