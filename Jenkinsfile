@@ -1,5 +1,8 @@
 pipeline    {
     agent any
+    environment{
+        imageName = "hello-nginx"
+    }
     stages    {
         stage("Prepare"){
            steps {
@@ -15,8 +18,8 @@ pipeline    {
 
         stage("bnuild image"){
             steps   {
-                sh "docker build -t hello-nginx ."
-                sh "docker tag hello-nginx:1.${env.BUILD_NUMBER} hello-ngnix"
+                sh "docker build -t ${env.imageName} ."
+                sh "docker tag ${env.imageName}:1.${env.BUILD_NUMBER} ${env.imageName}"
             }
         }
     }
