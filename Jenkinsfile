@@ -19,7 +19,7 @@ pipeline    {
         stage("bnuild image"){
             steps   {
                 sh "docker build -t ${env.imageName} ."
-                sh "docker tag ${env.imageName}:1.${env.BUILD_NUMBER} ${env.imageName}"
+                sh "docker tag ${env.imageName} ${env.imageName}:1.${env.BUILD_NUMBER}"
             }
         }
     }
