@@ -19,7 +19,7 @@ pipeline    {
         stage("deploy"){
             steps {
                 sshagent(['uat-server']) {
-                    sh "echo 'xxxx'"
+                    sh "ls -lrt"
                 }
             } 
         }
