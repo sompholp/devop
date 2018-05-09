@@ -15,7 +15,7 @@ pipeline    {
 
         stage("bnuild image"){
             steps   {
-                sh "docker build -t hello-nginx:1.2 ."
+                sh "docker build -t hello-nginx:1.3 ."
             }
         }
     }
