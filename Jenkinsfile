@@ -16,13 +16,22 @@ pipeline    {
             }
         }
 
+        // stage("deploy"){
+        //     steps {
+        //         sshagent(['uat-server']) {
+        //             sh "ls -lrt"
+        //         }
+        //     } 
+        // }
+
         stage("deploy"){
             steps {
                 sshagent(['uat-server']) {
-                    sh "ls -lrt"
+                    sh "ssh core@167.99.237.229 docker pull ${env.imageName}"
                 }
             } 
         }
+        
         // stage("build image"){
         //     steps   {
         //         sh "docker build -t ${env.imageName} ."
