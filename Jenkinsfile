@@ -25,7 +25,7 @@ pipeline    {
 
         stage("push image"){
             steps   {
-                sh "docker login -u somphol123p --password-stdin passw0rd"
+                sh "docker login -u somphol123p -p passw0rd"
                 sh "docker push ${env.imageName}"
             } 
         }
