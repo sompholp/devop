@@ -24,9 +24,9 @@ pipeline    {
         }
 
         stage("push image"){
-            steps   
+            steps   {
                 sh "docker push ${env.imageName}"
-            {}
+            } 
         }
     }
 
