@@ -32,9 +32,9 @@ pipeline    {
                             image.push{}
                         }
                 } 
-        }   
+            }   
         }
-
+    }
 }
 
 
