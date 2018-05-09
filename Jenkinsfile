@@ -13,7 +13,7 @@ pipeline    {
             }
         }
 
-        stage("nuild image"){
+        stage("bnuild image"){
             steps   {
                 sh "docker build -t hello-nginx ."
             }

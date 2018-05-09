@@ -14,14 +14,10 @@ services:
       - 3000:3000
     links:
       - mongodb:mongodb
-
-  hello:
-    image:  hello-ngnix:1.2
-    ports:
-      - 8080:80
   myjenkins:
     image:  jenkinsci/blueocean
     ports:
       - 8081:8080
-    volumn: /var/run/docker.sock:/var/run/docker.sock
-    
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
